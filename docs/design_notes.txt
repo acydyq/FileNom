@@ -1,1 +1,47 @@
-# UI/UX Design notes 
+# ArchiTek - FileBot Clone
+# Design Notes
+
+## 🎨 User Interface (UI) Design
+The application will have a **modern, minimalistic UI** built using PyQt6.
+Key components:
+- **File Selector**: Allows users to load movie/TV show files.
+- **File List View**: Displays files with previewed renamed versions.
+- **Rename Button**: Initiates renaming process.
+- **Settings Panel**:
+  - Configure renaming patterns.
+  - Select IMDB/TMDb as the metadata provider.
+  - Enable/disable automatic subtitle/artwork fetching.
+- **Log Panel**: Displays actions performed (successful renames, errors, API responses).
+
+## 📐 Layout Structure
+[ Main Window ]
+-------------------------------
+| [File List View]           |
+|                            |
+|---------------------------|
+| [Preview & Rename Panel]  |
+| (Old Name -> New Name)    |
+|---------------------------|
+| [Settings]  | [Logs]      |
+-------------------------------
+
+## 🔧 Backend Architecture
+- **Python Modules**:
+  - `renamer.py` – Handles renaming logic.
+  - `imdb_fetcher.py` – Retrieves metadata from IMDB/TMDb API.
+  - `subtitles.py` – Downloads subtitles from OpenSubtitles.
+  - `artwork.py` – Fetches and applies movie posters.
+  - `db.py` – Stores renaming history.
+  - `config.py` – Handles user settings.
+- **Data Flow**:
+  1. User loads files → `renamer.py` scans them.
+  2. `imdb_fetcher.py` fetches metadata.
+  3. Preview is displayed in the GUI.
+  4. User confirms renaming → `renamer.py` renames files.
+  5. (Optional) `subtitles.py` & `artwork.py` fetch additional content.
+  6. Rename history is logged in `db.py`.
+
+## 🎯 Future Design Enhancements
+- Dark mode toggle.
+- Drag-and-drop file support.
+- Batch processing for large libraries.

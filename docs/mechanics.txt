@@ -1,1 +1,45 @@
-# Internal mechanics breakdown 
+# ArchiTek - FileBot Clone
+# Internal Mechanics
+
+## 🔍 File Parsing & Analysis
+- Application will scan the file name and attempt to extract:
+  - Title
+  - Release year
+  - Episode number (if applicable)
+- `renamer.py` will use regex patterns to clean up filenames.
+
+## 🎬 IMDB/TMDb Metadata Fetching
+- **API used:** IMDbPY or TMDb API.
+- Process:
+  1. Extract title from filename.
+  2. Query API for matching movie/show.
+  3. Retrieve:
+     - Official title
+     - Year
+     - Genre
+     - Episode details (for TV shows)
+  4. Format the new filename based on user settings.
+
+## 🏷️ File Renaming Rules
+- Default renaming pattern:  
+  "{Title} ({Year}) [{Quality}]{Extension}"
+  Example: "Inception (2010) [1080p].mkv"
+- Customizable via `config.py`.
+
+## 📜 Subtitle & Artwork Fetching
+- **Subtitles**:  
+  - Uses `subliminal` to auto-fetch subs from OpenSubtitles.
+- **Artwork**:
+  - Retrieves posters from TMDb API.
+  - Saves them in `resources/posters/`.
+
+## 📂 Database (SQLite)
+- Stores renaming history to allow **undo** functionality.
+- Tables:
+  | id | old_filename  | new_filename | timestamp |
+
+## 🛠️ Error Handling & Logging
+- `app.log` records:
+  - API errors.
+  - File permission issues.
+  - Debugging info for crashes.

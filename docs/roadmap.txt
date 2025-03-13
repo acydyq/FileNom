@@ -1,1 +1,29 @@
-# Development roadmap 
+# ArchiTek - FileBot Clone
+# Development Roadmap
+
+## 🚀 Phase 1: Core Functionality (MVP)
+✅ Set up project structure & dependencies  
+✅ Implement basic GUI layout (PyQt6)  
+⬜ Develop `renamer.py` (basic regex-based renaming)  
+⬜ Integrate IMDBPY / TMDb API for metadata fetching  
+⬜ Implement file preview before renaming  
+⬜ Add rename confirmation prompt  
+⬜ Implement history tracking (`db.py`)  
+
+## 🎭 Phase 2: Extra Features  
+⬜ Subtitle fetching via OpenSubtitles (`subtitles.py`)  
+⬜ Artwork fetching (movie posters from TMDb)  
+⬜ User-configurable renaming patterns (`config.py`)  
+⬜ Error handling & logging (`app.log`)  
+
+## 🖥️ Phase 3: UI & UX Enhancements  
+⬜ Drag-and-drop file support  
+⬜ Dark mode toggle  
+⬜ Batch processing  
+
+## 📦 Phase 4: Deployment & Testing  
+⬜ Package project as a standalone EXE  
+⬜ Final UI polish  
+⬜ Bug fixes & optimization  
+⬜ Upload to GitHub  
+⬜ Final testing & user documentation  
