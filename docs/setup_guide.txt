@@ -1,0 +1,11 @@
+# ArchiTek - FileBot Clone .DEV
+## Setup Instructions
+
+### 1️⃣ Prerequisites
+Ensure you have the following installed:
+- Python 3.10+
+- pip (Python package manager)
+- Git (for version control)
+
+### 2️⃣ Setting Up the Project
+1. Open a Command Prompt (cmd) and navigate to the project folder:
