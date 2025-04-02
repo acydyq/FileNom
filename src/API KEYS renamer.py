@@ -10,3 +10,7 @@ SIMKL API Keys:
 
 Client ID:  9cbde7d60627f7067944b69559bf1ad907b4be8fa4008a4a2e8458b12204ba36
 Client Secret: 16b17ac3d8d684385e6305093f416d6b3befdd65607b6b46ce9e2ef1a7bd1b9a
+
+OMDb API Key:
+
+1dcc84eb
